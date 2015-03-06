@@ -29,3 +29,17 @@
 .et_nav_text_color_light #et-info a {
   color: #FFF;
 }
+
+#main-header {
+  background-image: url('/wp-content/themes/UW-Oshkosh-Divi/img/main-header-background.png');
+  background-repeat: repeat-x;
+  padding: 5px 0 0 0;
+}
+.et-fixed-header {
+  padding: 5px 0 0 0 !important;
+}
+.et_fixed_nav #logo {
+  max-height: 109px;
+  margin-bottom: 16px;
+  margin-left: -18px;
+}
