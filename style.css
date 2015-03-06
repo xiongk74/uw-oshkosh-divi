@@ -7,3 +7,25 @@
  Template:     Divi
  Version:      0.1.0
 */
+
+/**
+* UWO Navigation
+**/
+#top-header {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+}
+#et-secondary-menu {
+  float: none;
+  text-align: center;
+}
+#et-secondary-nav li {
+  text-align: left;
+}
+.et_nav_text_color_light,
+.et_nav_text_color_light #et-secondary-nav a,
+.et_nav_text_color_light .et-social-icon a,
+.et_nav_text_color_light #et-info a {
+  color: #FFF;
+}
