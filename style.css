@@ -28,6 +28,17 @@
 
 
 
+
+#siteTitle {
+  padding-top: 65px;
+}
+#siteTitle h1 {
+  font-size: 33px;
+  font-weight: 600;
+}
+
+
+
 /**
 * UWO Navigation
 **/

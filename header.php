@@ -121,8 +121,8 @@
 			<?php
 				$logo = get_stylesheet_directory_uri() . '/img/wordmark.png';
 			?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<img src="<?php echo esc_attr( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" id="logo" />
+				<a href="http://www.uwosh.edu">
+					<img src="<?php echo esc_attr( $logo ); ?>" alt="University of Wisconsin Oshkosh wordmark" id="logo" />
 				</a>
 
 				<div id="et-top-navigation">
@@ -176,6 +176,13 @@
 
 					<?php do_action( 'et_header_top' ); ?>
 				</div> <!-- #et-top-navigation -->
+				<div id="siteTitle">
+					<h1>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>
+						</a>
+					</h1>
+				</div>
 			</div> <!-- .container -->
 		</header> <!-- #main-header -->
 
