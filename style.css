@@ -94,6 +94,25 @@
 
 
 /**
+* Site Navigation
+**/
+.et_pb_fullwidth_menu .fullwidth-menu-nav > ul {
+  padding: 0 !important;
+  line-height: 48px;
+}
+.fullwidth-menu li {
+  font-size: 16px;
+  font-weight: 600;
+}
+.fullwidth-menu li > a {
+  padding-bottom: 0;
+}
+
+
+
+
+
+/**
 * FOOTER
 **/
 #main-footer {
