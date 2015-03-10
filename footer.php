@@ -43,7 +43,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 	<div id="uwo-footer">
 		<div id="footer-column-1" class="pull-left">
 		<a href="https://maps.google.com/maps?q=University+of+Wisconsin+Oshkosh+800+Algoma+Blvd.+Oshkosh,+WI+54901&amp;um=1&amp;ie=UTF-8&amp;hl=en&amp;sa=N&amp;tab=wl" target="_blank">
-			<img src="http://www.uwosh.edu/img/parts/wismap-color.png" class="wismap pull-left desaturate">
+			<img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/wismap-color.png') ?>" class="wismap pull-left desaturate">
 		</a>
 		<div id="address">
 			<address class="vcard">
@@ -118,36 +118,36 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 		<div id="mobile-emergency">
 			<p>
 			<a href="http://www.uwosh.edu/go/mobile">
-				<img src="http://www.uwosh.edu/img/parts/mobileapp-color.png" class="app-icon pull-left desaturate">Download UW Oshkosh's Mobile App</a>
+				<img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/mobileapp-color.png') ?>" class="app-icon pull-left desaturate">Download UW Oshkosh's Mobile App</a>
 			</p>
 			<p>
 			<a href="http://emergency.uwosh.edu">
-				<img src="http://www.uwosh.edu/img/parts/emergency-color.png" class="app-icon pull-left desaturate">Emergency and Safety Information</a>
+				<img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/emergency-color.png') ?>" class="app-icon pull-left desaturate">Emergency and Safety Information</a>
 			</p>
 		</div>
 		</div>
 		<!-- End #footer-column-2 -->
 		<div id="footer-column-3">
-		<div class="row social-row">
-		<ul id="footerSocialLinks" class="small-block-grid-7">
-		<li><a href="https://www.facebook.com/uwoshkosh" target="_blank" class="footerFacebook"><img src="http://www.uwosh.edu/img/icons/icon-facebook.png" class="social-icon desaturate" alt="Facebook logo"></a></li>
-		<li><a href="https://twitter.com/uwoshkosh" target="_blank" class="footerTwitter"><img src="http://www.uwosh.edu/img/icons/icon-twitter.png" class="social-icon desaturate" alt="Twitter logo"></a></li>
-		<li><a href="http://instagram.com/uwoshkosh" target="_blank" class="footerInstagram"><img src="http://www.uwosh.edu/img/icons/icon-instagram.png" class="social-icon desaturate" alt="Instagram logo"></a></li>
-		<li><a href="http://www.youtube.com/uwosh" target="_blank" class="footerYouTube"><img src="http://www.uwosh.edu/img/icons/icon-youtube.png" class="social-icon desaturate" alt="YouTube logo"></a></li>
-		<li><a href="http://www.linkedin.com/edu/school?id=19693" target="_blank" class="footerLinkedIn"><img src="http://www.uwosh.edu/img/icons/icon-linkedin.png" class="social-icon desaturate" alt="LinkedIn logo"></a></li>
-		<li><a href="http://www.pinterest.com/uwoshkosh/" target="_blank" class="footerPinterest"><img src="http://www.uwosh.edu/img/icons/icon-pinterest.png" class="social-icon desaturate" alt="Pinterest logo"></a></li>
-		<li><a href="http://www.flickr.com/photos/uwoshkosh/sets/" target="_blank" class="footerFlickr"><img src="http://www.uwosh.edu/img/icons/icon-flickr.png" class="social-icon desaturate" alt="Flickr logo"></a></li>
-		</ul>
-		<a href="http://www.uwosh.edu/chancellor/systemofaccountability/" target="_blank">
-			<img src="http://www.uwosh.edu/img/parts/college-portrait.png" id="college-portrait" class="inline" alt="College Portrait">
-		</a>
-		<a href="http://www.ncahlc.org/?option=com_directory&amp;Action=ShowBasic&amp;instid=2030" target="_blank">
-			<img src="http://www.uwosh.edu/img/parts/hlc.png" id="hlc" class="inline" alt="Higher Learning Commission">
-		</a>
-		<a href="http://www.wisconsin.edu/" target="_blank">
-			<img src="http://www.uwosh.edu/img/parts/uw-system.png" id="uw-system" class="inline" alt="UW System">
-		</a>
-		<div align="right" style="padding-right:40px;"><a href="http://www.uwosh.edu/search2014/search-files/" style="font-size: 11px;color:#444;">Committee</div></div>
+			<div class="row social-row">
+				<ul id="footerSocialLinks" class="small-block-grid-7">
+					<li><a href="https://www.facebook.com/uwoshkosh" target="_blank" class="footerFacebook"><img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/icon-facebook.png') ?>" class="social-icon desaturate" alt="Facebook logo"></a></li>
+					<li><a href="https://twitter.com/uwoshkosh" target="_blank" class="footerTwitter"><img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/icon-twitter.png') ?>" class="social-icon desaturate" alt="Twitter logo"></a></li>
+					<li><a href="http://instagram.com/uwoshkosh" target="_blank" class="footerInstagram"><img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/icon-instagram.png') ?>" class="social-icon desaturate" alt="Instagram logo"></a></li>
+					<li><a href="http://www.youtube.com/uwosh" target="_blank" class="footerYouTube"><img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/icon-youtube.png') ?>" class="social-icon desaturate" alt="YouTube logo"></a></li>
+					<li><a href="http://www.linkedin.com/edu/school?id=19693" target="_blank" class="footerLinkedIn"><img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/icon-linkedin.png') ?>" class="social-icon desaturate" alt="LinkedIn logo"></a></li>
+					<li><a href="http://www.pinterest.com/uwoshkosh/" target="_blank" class="footerPinterest"><img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/icon-pinterest.png') ?>" class="social-icon desaturate" alt="Pinterest logo"></a></li>
+					<li><a href="http://www.flickr.com/photos/uwoshkosh/sets/" target="_blank" class="footerFlickr"><img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/icon-flickr.png') ?>" class="social-icon desaturate" alt="Flickr logo"></a></li>
+				</ul>
+				<a href="http://www.uwosh.edu/chancellor/systemofaccountability/" target="_blank">
+					<img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/college-portrait.png') ?>" id="college-portrait" class="inline" alt="College Portrait">
+				</a>
+				<a href="http://www.ncahlc.org/?option=com_directory&amp;Action=ShowBasic&amp;instid=2030" target="_blank">
+					<img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/hlc.png') ?>" id="hlc" class="inline" alt="Higher Learning Commission">
+				</a>
+				<a href="http://www.wisconsin.edu/" target="_blank">
+					<img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/uw-system.png') ?>" id="uw-system" class="inline" alt="UW System">
+				</a>
+			</div>
 		</div>
 		<!-- End #footer-column-3 -->
 	</div>
