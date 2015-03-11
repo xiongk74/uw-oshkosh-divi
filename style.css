@@ -69,7 +69,7 @@
 .et-fixed-header {
   padding: 5px 0 0 0 !important;
 }
-.et_fixed_nav #logo {
+#logo {
   max-height: 109px;
   margin-bottom: 16px;
   margin-left: -18px;
