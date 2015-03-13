@@ -10,6 +10,22 @@ function uwo_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'uwo_theme_enqueue_styles' );
 
+// Customize Wordpress login page
+function my_login_logo() { ?>
+    <style type="text/css">
+        body.login div#login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/wordmark-login.png);
+            background-size: contain;
+            padding-bottom: 30px;
+            margin-left: 0;
+            margin-right: 0;
+            width: 322px;
+            height: 149px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
 // Favicons
 function uwo_favicon_link() {
     echo '<!-- Favicons -->
