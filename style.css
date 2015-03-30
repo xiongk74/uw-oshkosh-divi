@@ -15,10 +15,7 @@
 /**
 * Defaults
 **/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
-  font-size: 16px;
-  font-size: 1em;
-}
+
 
 
 
@@ -78,7 +75,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 #main-header {
-  background-image: url('/wp-content/themes/UW-Oshkosh-Divi/img/main-header-background.png');
+  background-image: url('img/main-header-background.png');
   background-repeat: repeat-x;
   padding: 5px 0 0 0;
 }
