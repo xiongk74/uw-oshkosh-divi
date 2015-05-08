@@ -351,3 +351,14 @@ address {
 /**
 *END FOOTER
 **/
+
+
+
+
+
+/**
+* Ninja Forms
+**/
+.widget_ninja_forms_widget {
+  width: 100% !important;
+}
