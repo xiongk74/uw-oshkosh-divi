@@ -410,16 +410,23 @@ address {
   border: 1px solid #dcddde;
   box-shadow: rgba(0,0,0,0.2) 0px 2px 3px 0px;
 }
-
 .story-card h2 {
   background-color: #ededed;
   background: linear-gradient(to bottom, #fff 0%, #eef0f0 100%);
-  text-align: right;
   font-size: 18px;
   font-weight: bold;
   padding: 16px;
+  margin-bottom: 16px;
 }
-
-.story-card p {
-  padding: 16px !important;
+.story-card .story-image {
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+.story-card .story-name {
+  font-weight: bold;
+  padding: 0 16px;
+}
+.story-card .story-excerpt {
+  padding: 0 16px 16px 16px;
 }
