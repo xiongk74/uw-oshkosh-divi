@@ -10,6 +10,12 @@ function uwo_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'uwo_theme_enqueue_styles' );
 
+// JavaScript
+function uwo_theme_enqueue_script(){
+  wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/js/custom.js' );
+}
+add_action( 'wp_enqueue_scripts', 'uwo_theme_enqueue_script' );
+
 // Customize Wordpress login page
 function my_login_logo() { ?>
     <style type="text/css">
@@ -49,5 +55,14 @@ function uwo_favicon_link() {
     <meta name="application-name" content="UW Oshkosh">';
 }
 add_action( 'wp_head', 'uwo_favicon_link' );
-
+/**
+ * I want to use the basic 2012 theme but don't want TinyMCE to create
+ * unwanted HTML. By removing editor-style.css from the $editor_styles
+ * global, this code effectively undoes the call to add_editor_style()
+ */
+add_action( 'after_setup_theme', 'foobar_setup', 11 );
+function foobar_setup() {
+  global $editor_styles;
+  $editor_styles = array();
+}
 ?>

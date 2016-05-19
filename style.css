@@ -2,10 +2,10 @@
  Theme Name:   UW Oshkosh Divi
  Theme URI:    https://github.com/uwoshkosh/uw-oshkosh-divi
  Description:  Divi Child Theme
- Author:       Shawn Hansen
- Author URI:   http://twitter.com/geekles
+ Author:       Joseph Kerkhof
+ Author URI:   http://twitter.com/musicaljoeker
  Template:     Divi
- Version:      0.1.0
+ Version:      0.2.0
 */
 
 
@@ -15,7 +15,9 @@
 /**
 * Defaults
 **/
-
+body{
+  min-width: 320px;
+}
 
 
 
@@ -39,26 +41,72 @@
 }
 
 
-
-
-
-#siteTitle {
-  padding-top: 62px;
-}
-#siteTitle h1 {
-  font-size: 33px;
-  font-weight: 600;
-}
-
-
-
 /**
 * UWO Navigation
 **/
+#siteTitle {
+  display: inline-block;
+  vertical-align: bottom;
+  padding-bottom: 22px;
+}
+.image-title-wrapper a{
+  display: inline-block;
+}
+#siteTitle h1 {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 33px;
+  font-weight: 600;
+}
+#et-top-navigation .mobile_nav .mobile_menu_bar{
+  position: absolute;
+  right: 0;
+}
+#mobile_menu{
+  top: 100px;
+}
+header .container a img{
+  max-width: none !important;
+}
+@media only screen and (max-width: 375px){
+  header .container a img{
+    max-width: 50% !important;
+  }
+}
+@media only screen and (min-width: 980px){
+  header .container{
+    min-width: 793px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  #siteTitle h1{
+    font-size: 24px;
+  }
+  header .container {
+    white-space: normal;
+  }
+}
 #top-header {
   font-size: 16px;
   font-weight: 600;
   line-height: 16px;
+}
+#et-top-navigation{
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+#top-menu-nav{
+  padding-top: 15px;
+  padding-right: 72px;
+  float: right !important;
+}
+#et_top_search{
+  margin-top: 16px;
+  position: absolute;
+  right: 30px;
 }
 #et-secondary-menu {
   float: none;
@@ -73,19 +121,19 @@
 .et_nav_text_color_light #et-info a {
   color: #FFF;
 }
-
 #main-header {
   background-image: url('img/main-header-background.png');
   background-repeat: repeat-x;
   padding: 5px 0 0 0;
 }
 #logo {
-  max-height: 109px;
+  max-height: 100px;
   margin-bottom: 16px;
   margin-left: -18px;
 }
-
-
+#et_mobile_nav_menu {
+  margin-top: 16px;
+}
 
 
 /**
@@ -100,7 +148,60 @@
 }
 
 
+/**
+* Custom Search Bar
+**/
+.display-search{
+  opacity: 1 !important;
+}
 
+#et_top_search form {
+  width: 320px !important;
+  max-width: none !important;
+  height: 73px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-top-width: 3px;
+  background-color: #fec424 !important;
+  top: 46px;
+  border-top-color: rgb(46, 163, 242);
+  border-top-style: solid;
+  border-top-width: 3px;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 5px 0px;
+  display: none;
+
+}
+#et_top_search form input {
+  background-color: #f8f8f8;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  height: 33px;
+  width: 280px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  right: auto;
+  top: 20px;
+}
+#et-top-navigation #et_mobile_nav_menu .mobile_nav .mobile_menu_bar:before {
+  color: #524d41;
+}
+.et_pb_row .et_mobile_nav_menu .mobile_nav .mobile_menu_bar:before {
+  color: white;
+}
+@media only screen and (max-width: 475px){
+  #et_top_search form{
+    width: 240px !important;
+    right: -52px;
+
+  }
+  #et_top_search form input {
+    width: 200px;
+  }
+}
 
 
 /**
@@ -119,6 +220,13 @@
 }
 
 
+
+/**
+* Content
+**/
+.et_pb_section {
+    padding: 0 !important;
+}
 
 
 
