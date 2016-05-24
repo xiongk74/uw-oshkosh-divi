@@ -10,9 +10,9 @@ function uwo_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'uwo_theme_enqueue_styles' );
 
-// JavaScript
+// Custom JavaScript
 function uwo_theme_enqueue_script(){
-  wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/js/custom.js' );
+  wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery') ,'1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'uwo_theme_enqueue_script' );
 

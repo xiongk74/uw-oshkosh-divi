@@ -3,8 +3,16 @@
 //  default $ for all of our jQuery calls.
 (function ($) {
   $(document).ready(function(){
+    // Custom search box
     $("#et_search_icon").click(function(){
       $(".et-search-form").fadeToggle("slow");
     });
+  });
+
+  $( window ).load(function() {
+    // Turns off the Divi parent theme's event listener
+    // (prevents the main menu from dropping down when a sub-menu
+    // item is clicked)
+    $(".et_pb_fullwidth_section").find("li.menu-item > a").off("click");
   });
 }(jQuery));
