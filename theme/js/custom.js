@@ -5,7 +5,7 @@
   $(document).ready(function(){
     // Custom search box
     $("#et_search_icon").click(function(){
-      $(".et-search-form").fadeToggle("slow");
+      $("#et_top_search div div form").fadeToggle("slow");
     });
   });
 

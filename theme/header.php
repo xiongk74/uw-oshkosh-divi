@@ -1,4 +1,5 @@
 <?php if ( ! isset( $_SESSION ) ) session_start(); ?>
+<!DOCTYPE html>
 <!--
 ,   `,  ,    ,  `, ,    `: ,,,,,  ,,,`   `++.  , .,,,,,`,,    ,
 #   ,'  ##   +` .+ #,   #, #::::  #.,## `#``#  # .::#::` #   #,
@@ -41,7 +42,6 @@
    ####+     .####    ##     '#   #+    ,##   ;####.     +###'    #      #.
 
 -->
-<!DOCTYPE html>
 <!--[if IE 6]>
 <html id="ie6" <?php language_attributes(); ?>>
 <![endif]-->
@@ -226,15 +226,11 @@
 					<?php if ( false !== et_get_option( 'show_search_icon', true ) ) : ?>
 					<div id="et_top_search">
 						<span id="et_search_icon"></span>
-						<form role="search" method="get" class="et-search-form et-hidden" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<!-- Initializing Google Custom Search -->
 						<?php
-							printf( '<input type="search" class="et-search-field" placeholder="%1$s" value="%2$s" name="s" title="%3$s" />',
-								esc_attr__( 'Search &hellip;', 'Divi' ),
-								get_search_query(),
-								esc_attr__( 'Search for:', 'Divi' )
-							);
+							include_once WP_CONTENT_DIR . '/custom-files/google-custom-search.php';
+							echo $gcs;
 						?>
-						</form>
 					</div>
 					<?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
 
