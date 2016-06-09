@@ -228,8 +228,10 @@
 						<span id="et_search_icon"></span>
 						<!-- Initializing Google Custom Search -->
 						<?php
-							include_once WP_CONTENT_DIR . '/custom-files/google-custom-search.php';
-							echo $gcs;
+							if ( file_exists( WP_CONTENT_DIR . '/custom-files/google-custom-search.php' ) ){
+								include_once WP_CONTENT_DIR . '/custom-files/google-custom-search.php';
+								echo $gcs;
+							}
 						?>
 					</div>
 					<?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
