@@ -128,6 +128,12 @@ header .container a img{
 #et_mobile_nav_menu {
   margin-top: 16px;
 }
+.menu-item a{
+  height: 33px;
+}
+.sub-menu{
+  top: 33px;
+}
 
 /**
 * Quicklinks Navigation
@@ -231,6 +237,13 @@ header .container a img{
 **/
 .et_pb_section {
     padding: 0 !important;
+}
+.et_pb_widget_area{
+  border-right: 0;
+  padding: 0;
+}
+.promo-multicolor .widget_text{
+  margin: 0 !important;
 }
 
 /**
