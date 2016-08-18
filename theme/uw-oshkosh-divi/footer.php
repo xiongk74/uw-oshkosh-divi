@@ -138,9 +138,6 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 							<li><a href="http://www.pinterest.com/uwoshkosh/" target="_blank" class="footerPinterest"><img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/icon-pinterest.png') ?>" class="social-icon desaturate" alt="Pinterest logo"></a></li>
 							<li><a href="http://www.flickr.com/photos/uwoshkosh/sets/" target="_blank" class="footerFlickr"><img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/icon-flickr.png') ?>" class="social-icon desaturate" alt="Flickr logo"></a></li>
 						</ul>
-						<a href="http://www.uwosh.edu/chancellor/systemofaccountability/" target="_blank">
-							<img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/college-portrait.png') ?>" id="college-portrait" class="inline" alt="College Portrait">
-						</a>
 						<a href="http://www.ncahlc.org/?option=com_directory&amp;Action=ShowBasic&amp;instid=2030" target="_blank">
 							<img src="<?php echo esc_attr(get_stylesheet_directory_uri() . '/img/footer/hlc.png') ?>" id="hlc" class="inline" alt="Higher Learning Commission">
 						</a>
