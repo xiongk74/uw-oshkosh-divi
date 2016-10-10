@@ -1,0 +1,37 @@
+{
+  "name": "uw-oshkosh-divi",
+  "version": "0.2.7",
+  "description": "UW-Oshkosh child theme for Divi",
+  "main": "index.js",
+  "scripts": {
+    "dev:setup": "mkdirp builds/dev/custom-files builds/dev/uw-oshkosh-divi/img/favicons builds/dev/uw-oshkosh-divi/img/footer builds/dev/uw-oshkosh-divi/js builds/dev/uw-oshkosh-divi/theme-updates",
+    "dev:copy-custom-files": "copy src/custom-files/**/*.php builds/dev/custom-files",
+    "dev:copy-theme": "copy src/uw-oshkosh-divi/**/*.php builds/dev/uw-oshkosh-divi",
+    "dev:copy-php": "npm run dev:copy-custom-files dev:copy-theme",
+    "dev:sass": "node-sass --source-map true --output-style expanded src/uw-oshkosh-divi/style.scss --output builds/dev/uw-oshkosh-divi",
+    "build-dev": "npm-run-all --parallel dev:*",
+    "build-prod": "npm-run-all --parallel prod:*",
+    "build-release": "npm-run-all --parallel rel:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uwoshkosh/uw-oshkosh-divi.git"
+  },
+  "keywords": [
+    "child",
+    "theme",
+    "Divi",
+    "WordPress",
+    "Theme"
+  ],
+  "author": "Joseph Kerkhof",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uwoshkosh/uw-oshkosh-divi/issues"
+  },
+  "homepage": "https://github.com/uwoshkosh/uw-oshkosh-divi#readme",
+  "devDependencies": {
+    "node-sass": "^3.10.1",
+    "npm-run-all": "^3.1.0"
+  }
+}
