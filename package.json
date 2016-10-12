@@ -4,18 +4,21 @@
   "description": "UW-Oshkosh child theme for Divi",
   "main": "index.js",
   "scripts": {
-    "dev:setup": "mkdirp builds/dev/custom-files builds/dev/uw-oshkosh-divi/img/favicons builds/dev/uw-oshkosh-divi/img/footer builds/dev/uw-oshkosh-divi/js builds/dev/uw-oshkosh-divi/theme-updates",
-    "dev:copy-custom-files": "copy src/custom-files/**/*.php builds/dev/custom-files",
-    "dev:copy-theme": "copy src/uw-oshkosh-divi/**/*.php builds/dev/uw-oshkosh-divi",
-    "dev:copy-php": "npm run dev:copy-custom-files dev:copy-theme",
+    "dev:copy-php": "cd src && copy **/*.php ../builds/dev",
     "dev:sass": "node-sass --source-map true --output-style expanded src/uw-oshkosh-divi/style.scss --output builds/dev/uw-oshkosh-divi",
+    "dev:js-transform": "babel src/uw-oshkosh-divi/js/*.js --out-file builds/dev/js/*.js --source-maps ",
     "build-dev": "npm-run-all --parallel dev:*",
     "build-prod": "npm-run-all --parallel prod:*",
     "build-release": "npm-run-all --parallel rel:*"
   },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uwoshkosh/uw-oshkosh-divi.git"
+    "url": "git+https://github.com/uwosh/uw-oshkosh-divi.git"
   },
   "keywords": [
     "child",
@@ -27,10 +30,12 @@
   "author": "Joseph Kerkhof",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/uwoshkosh/uw-oshkosh-divi/issues"
+    "url": "https://github.com/uwosh/uw-oshkosh-divi/issues"
   },
-  "homepage": "https://github.com/uwoshkosh/uw-oshkosh-divi#readme",
+  "homepage": "https://github.com/uwosh/uw-oshkosh-divi#readme",
   "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
     "node-sass": "^3.10.1",
     "npm-run-all": "^3.1.0"
   }

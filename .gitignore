@@ -1,0 +1,6 @@
+# Mac Crap
+.DS_Store
+
+# Directories
+node_modules/
+builds/
