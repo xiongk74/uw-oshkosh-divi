@@ -12,6 +12,8 @@ If you require Node, go to [nodejs.org](https://nodejs.org) and click on the big
 1. Navigate to the repository in a terminal window
 2. Run ```npm install```
 
+It should be noted that this package runs some UNIX commands, so this won't work on Windows. It does work on Linux and Mac.
+
 That's it! You should have everything you need to run scripts for uw-oshkosh-divi.
 
 # About uw-oshkosh-divi
