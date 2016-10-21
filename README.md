@@ -10,7 +10,7 @@ If you require Node, go to [nodejs.org](https://nodejs.org) and click on the big
 
 ### Install local dependencies
 1. Navigate to your repository in a terminal window
-2. Run ```sh $ npm install```
+2. Run ```npm install```
 
 That's it! You should have everything you need to run scripts for uw-oshkosh-divi.
 
