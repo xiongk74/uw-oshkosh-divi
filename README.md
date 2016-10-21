@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-### [Node.js](https://nodejs.org) & [npm](https://www.npmjs.com/)
+### [Node.js](https://nodejs.org)
 
 Bring up a terminal and type `node --version`.
 Node should respond with a version at or above 0.10.x.
