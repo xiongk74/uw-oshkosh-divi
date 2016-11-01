@@ -134,6 +134,12 @@ header .container a img{
 .sub-menu{
   top: 33px;
 }
+.fullwidth-menu-nav ul li a{
+  text-indent: -10px;
+}
+.fullwidth-menu-nav>ul>li>a{
+  text-indent: 0;
+}
 
 /**
 * Quicklinks Navigation
