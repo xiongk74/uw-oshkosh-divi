@@ -1,5 +1,5 @@
 <?php
-
+include 'gsc-module/gsc-module.php'
 //Initialize the update checker.
 require 'theme-updates/theme-update-checker.php';
 $example_update_checker = new ThemeUpdateChecker(
