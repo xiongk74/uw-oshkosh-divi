@@ -1,7 +1,9 @@
 <?php
-include 'gsc-module/gsc-module.php'
-//Initialize the update checker.
-require 'theme-updates/theme-update-checker.php';
+// Instantiate the GCS module
+require 'includes/gcs-module.php' ;
+
+// Initialize the update checker.
+require 'includes/theme-update-checker.php' ;
 $example_update_checker = new ThemeUpdateChecker(
     'uw-oshkosh-divi',
     'http://www.uwosh.edu/projects/wptheme/info.json'
