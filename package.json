@@ -12,7 +12,7 @@
     "img:dev:rest": "imagemin src/uw-oshkosh-divi/img/screenshot.png --out-dir=builds/dev/uw-oshkosh-divi/img --plugin=jpeg-recompress --plugin=svgo",
     "img:dev:screenshot": "imagemin src/uw-oshkosh-divi/*.* --out-dir=builds/dev/uw-oshkosh-divi/ --plugin=jpeg-recompress --plugin=svgo",
     "dev:img-compress": "npm-run-all --parallel img:dev:*",
-    "build-dev": "npm-run-all --parallel dev:*",
+    "build-dev": "rm -rf builds/dev && npm-run-all --parallel dev:*",
     "prod:copy-php": "cd src && copy **/**/*.php ../builds/prod && copy **/*.php ../builds/prod",
     "prod:sass": "node-sass --output-style compressed src/uw-oshkosh-divi/style.scss --output builds/prod/uw-oshkosh-divi",
     "prod:js-transform": "mkdirp builds/prod/uw-oshkosh-divi/js && babel src/uw-oshkosh-divi/js/**/*.js --out-file builds/prod/uw-oshkosh-divi/js/custom.js",
@@ -21,7 +21,8 @@
     "img:prod:rest": "imagemin src/uw-oshkosh-divi/img/*.* --out-dir=builds/prod/uw-oshkosh-divi/img --plugin=jpeg-recompress --plugin=svgo",
     "img:prod:screenshot": "imagemin src/uw-oshkosh-divi/screenshot.png --out-dir=builds/prod/uw-oshkosh-divi/ --plugin=jpeg-recompress --plugin=svgo",
     "prod:img-compress": "npm-run-all --parallel img:prod:*",
-    "build-prod": "npm-run-all --parallel prod:*"
+    "build-prod": "rm -rf builds/prod && npm-run-all --parallel prod:*",
+    "clean": "rm -rf builds"
   },
   "babel": {
     "presets": [
