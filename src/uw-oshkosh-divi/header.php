@@ -228,10 +228,31 @@
 						<span id="et_search_icon"></span>
 						<!-- Initializing Google Custom Search -->
 						<?php
-							if ( file_exists( WP_CONTENT_DIR . '/custom-files/google-custom-search.php' ) ){
-								include_once WP_CONTENT_DIR . '/custom-files/google-custom-search.php';
-								echo $gcs;
-							}
+							//connect to database
+							global $wpdb;
+							$prefix= $wpdb->prefix;
+							$gcs_table = $prefix . "gcs_address";
+							$count_query = "select count(*) from $gcs_table";
+							$num = $wpdb->get_var($count_query);
+								//Check to see if table has been created
+								if ($wpdb->get_var("SHOW TABLES LIKE '$gcs_table'")==$gcs_table)
+									{
+									if ($num >0)
+										{
+										//check to see if there is data in the table
+										$maxId= $wpdb->get_var("SELECT Max(id) FROM $gcs_table  ");
+										$gcs_code= $wpdb->get_var("SELECT address_code FROM $gcs_table WHERE id= $maxId ");
+										echo  stripslashes($gcs_code);
+		   							}
+									else
+										{
+										echo " ";
+										}
+								  }
+									else
+									{
+										echo " ";
+									}
 						?>
 					</div>
 					<?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
