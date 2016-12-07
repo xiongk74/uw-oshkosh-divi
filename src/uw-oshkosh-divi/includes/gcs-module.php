@@ -5,7 +5,17 @@ function plugin_admin_add_page() {
           add_options_page('GCS Settings Page', 'GCS Settings', 'customize', 'gcs-plugin', 'plugin_options_page');
         }
 add_action( 'after_switch_theme', 'check_gcs_table' );
+add_action('init','delete_custom_files');
 
+function delete_custom_files(){
+  //search for google custom search file
+  if (file_exists('/run_once.php'))
+    {
+        $script= file_get_contents('../wp-content/custom-files/google-custom-search.php');
+        echo $script;
+       // deletes file and folder
+         unlink('/run_once.php');
+     }
 function check_gcs_table(){
     global $wpdb;
     $prefix= $wpdb->prefix;
@@ -21,29 +31,6 @@ function check_gcs_table(){
              ) $charset_collate;";
           require_once( ABSPATH . 'wp-admin/includes/upgrade.php');
           dbDelta( $sql );
-          //search for google custom search file
-        if (file_exists('../wp-content/custom-files/google-custom-search.php'))
-          {
-              $script= file_get_contents('../wp-content/custom-files/google-custom-search.php');
-              // takes off php script before and after
-
-              $scrub_php= substr($script,16,-6);
-              //inserts data into table
-              $wpdb->insert(
-              $gcs_table,
-              array(
-                'address_code' => $scrub_php
-               ),
-              array(
-                '%s'
-               )
-             );
-             // deletes file and folder
-               if(unlink("../wp-content/custom-files/google-custom-search.php"))
-               {
-                 rmdir("../wp-content/custom-files");
-               }
-           }
         }
       }
   function plugin_options_page() {
