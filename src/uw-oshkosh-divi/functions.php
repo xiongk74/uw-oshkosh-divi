@@ -1,5 +1,5 @@
 <?php
-// Instantiate the GCS module
+// Instantiate the Google Custom Search module
 require 'includes/gcs-module.php' ;
 
 // Initialize the update checker.
