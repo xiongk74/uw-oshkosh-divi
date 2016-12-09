@@ -9,7 +9,7 @@
     "build:js-transform": "mkdirp builds/uw-oshkosh-divi/js && babel src/uw-oshkosh-divi/js/**/*.js --out-file builds/uw-oshkosh-divi/js/custom.js ",
     "img:build:compress-favicons": "imagemin src/uw-oshkosh-divi/img/favicons/*.* --out-dir=builds/uw-oshkosh-divi/img/favicons --plugin=jpeg-recompress --plugin=svgo",
     "img:build:compress-footer": "imagemin src/uw-oshkosh-divi/img/footer/*.* --out-dir=builds/uw-oshkosh-divi/img/footer --plugin=jpeg-recompress --plugin=svgo",
-    "img:build:rest": "imagemin src/uw-oshkosh-divi/img/screenshot.png --out-dir=builds/uw-oshkosh-divi/img --plugin=jpeg-recompress --plugin=svgo",
+    "img:build:rest": "imagemin src/uw-oshkosh-divi/img/*.* --out-dir=builds/uw-oshkosh-divi/img --plugin=jpeg-recompress --plugin=svgo",
     "img:build:screenshot": "imagemin src/uw-oshkosh-divi/*.* --out-dir=builds/uw-oshkosh-divi/ --plugin=jpeg-recompress --plugin=svgo",
     "build:img-compress": "npm-run-all --parallel img:build:*",
     "build": "rm -rf builds && npm-run-all --parallel build:*",
