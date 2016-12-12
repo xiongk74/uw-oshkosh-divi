@@ -246,16 +246,14 @@
 											// puts the GCS code on the page
 											echo stripslashes($gcs_code);
 										}
-								  }
+									}
+									?>
+								</div>
+							<?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
 
-
-						?>
-					</div>
-					<?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
-
-					<?php do_action( 'et_header_top' ); ?>
-				</div> <!-- #et-top-navigation -->
-			</div> <!-- .container -->
-		</header> <!-- #main-header -->
+							<?php do_action( 'et_header_top' ); ?>
+						</div> <!-- #et-top-navigation -->
+					</div> <!-- .container -->
+				</header> <!-- #main-header -->
 
 				<div id="et-main-area">
