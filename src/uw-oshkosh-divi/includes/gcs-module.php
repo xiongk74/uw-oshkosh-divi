@@ -10,6 +10,8 @@ function check_gcs_table(){
     global $wpdb;
     $prefix= $wpdb->prefix;
     $gcs_table = $prefix . "gcs_address";
+    $gcs_code='';
+    $placeholder='';
       if ($wpdb->get_var("SHOW TABLES LIKE '$gcs_table'")!=$gcs_table)
         {
           // Table doesn't exists, create one
