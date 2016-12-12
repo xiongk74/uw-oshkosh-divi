@@ -232,11 +232,11 @@
 							global $wpdb;
 							$prefix= $wpdb->prefix;
 							$gcs_table = $prefix . "gcs_address";
-							$count_query = "select count(*) from $gcs_table";
-							$num = $wpdb->get_var($count_query);
-								//Check to see if table has been created
+							//Check to see if table has been created
 								if ($wpdb->get_var("SHOW TABLES LIKE '$gcs_table'")==$gcs_table)
 									{
+										$count_query = "select count(*) from $gcs_table";
+										$num = $wpdb->get_var($count_query);
 									if ($num >0)
 										{
 										//check to see if there is data in the table
@@ -249,20 +249,6 @@
 										echo " ";
 										}
 								  }
-									else
-									{
-										echo " ";
-									}
-
-									  //search for run-once file do update database and delete google-custom-search file
-									  if (file_exists('wp-content/themes/uw-oshkosh-divi/includes/run-once.php'))
-									    {
-													//creates database and inserts contents of the custom-files folder into it
-									        include 'wp-content/themes/uw-oshkosh-divi/includes/run-once.php';
-									       // deletes file the run-once file
-									         unlink('wp-content/themes/uw-oshkosh-divi/includes/run-once.php');
-												 }
-
 
 
 						?>
