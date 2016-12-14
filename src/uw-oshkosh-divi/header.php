@@ -236,10 +236,10 @@
 									//Check to see if table has been created
 									if ($wpdb->get_var("SHOW TABLES LIKE '$gcs_table'")==$gcs_table)
 									{
+										$count_query = "select count(*) from $gcs_table";
+										$num = $wpdb->get_var($count_query);
 										if ($num>0)
 										{
-											$count_query = "select count(*) from $gcs_table";
-											$num = $wpdb->get_var($count_query);
 											//check to see if there is data in the table
 											$maxId= $wpdb->get_var("SELECT Max(id) FROM $gcs_table  ");
 											$gcs_code= $wpdb->get_var("SELECT address_code FROM $gcs_table WHERE id= $maxId ");
