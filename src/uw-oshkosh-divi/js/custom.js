@@ -1,6 +1,6 @@
-// Wordpress uses the '$' object by default to call $.
+// Wordpress uses the 'jQuery' object by default to call jQuery.
 //  This wrapping, self-executing function allows us to use the
-//  default $ for all of our $ calls.
+//  default $ for all of our jQuery calls.
 (function ($) {
   $(document).ready(function(){
     // Custom search box
