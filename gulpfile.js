@@ -2,59 +2,73 @@
 var gulp = require('gulp');
 
 // Include Our Plugins
-var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var copy = require('gulp-copy');
-var babel = require('gulp-babel');
-var imagemin = require('gulp-imagemin');
-var merge = require('merge-stream');
-var svgo = require('gulp-svgo');
-var mkdirp = require('gulp-mkdirp');
-var clean = require('gulp-clean');
-var runSequence = require('run-sequence');
+const jshint = require('gulp-jshint');
+const sass = require('gulp-sass');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const copy = require('gulp-copy');
+const babel = require('gulp-babel');
+const imagemin = require('gulp-imagemin');
+const merge = require('merge-stream');
+const svgo = require('gulp-svgo');
+const mkdirp = require('gulp-mkdirp');
+const clean = require('gulp-clean');
+const runSequence = require('run-sequence');
+const autoprefixer = require('gulp-autoprefixer');
+const cssnano = require('gulp-cssnano');
+const gulpif = require('gulp-if');
 
-gulp.task('build', ['clean'], function(done) {
-    gulp.on('task_stop', function(event) {
-        if (event.task === 'builder') {
-            done();
-        }
-    });
-    gulp.start('builder');
+gulp.task('build', function(cb) {
+  runSequence('clean', ['style', 'js', 'images', 'php'], 'lint', cb);
 });
+
 gulp.task('clean', function() {
     return gulp.src('builds')
-        .pipe(clean())
+        .pipe(clean());
 });
-gulp.task('builder', function() {
-    var copy = gulp.src("src/**/*.*")
-        .pipe(gulp.dest('builds'))
-    var style = gulp.src('src/**/**.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('builds'))
-    var transform = gulp.src('src/uw-oshkosh-divi/js/**/*.js')
-        .pipe(babel())
-        .pipe(gulp.dest('builds/uw-oshkosh-divi/js'))
-    var compressFavicons = gulp.src('src/uw-oshkosh-divi/img/favicons/*.*')
-        .pipe(imagemin())
-        .pipe(svgo())
-        .pipe(gulp.dest('builds/uw-oshkosh-divi/img/favicons'))
-    var compressFooter = gulp.src('src/uw-oshkosh-divi/img/footer/*.*')
-        .pipe(imagemin())
-        .pipe(svgo())
-        .pipe(gulp.dest('builds/uw-oshkosh-divi/img/footer'))
-    var rest = gulp.src('src/uw-oshkosh-divi/img/*.*')
-        .pipe(imagemin())
-        .pipe(svgo())
-        .pipe(gulp.dest('builds/uw-oshkosh-divi/img/'));
-    var screenshot = gulp.src('src/uw-oshkosh-divi/*.*')
-        .pipe(imagemin())
-        .pipe(svgo())
-        .pipe(gulp.dest('builds/uw-oshkosh-divi'));
-    var lint = gulp.src('js/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'))
-    return merge(copy, style, transform, compressFooter, compressFavicons, screenshot, rest, lint);
+
+gulp.task('style', function () {
+  var notThemeMetadata = function(file){
+    var filenameSplit = String(file["history"]).split('/');
+    var filename = filenameSplit[filenameSplit.length-1];
+    if(filename != 'theme-metadata.css'){
+      return true;
+    }
+    return false;
+  }
+  return gulp.src(['src/**/*.css', 'src/**/*.scss'])
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions']
+    }))
+    .pipe(gulpif(notThemeMetadata, cssnano()))
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest('builds/uw-oshkosh-divi'));
+});
+
+gulp.task('js', function(){
+  return gulp.src('src/uw-oshkosh-divi/js/**/*.js')
+      .pipe(babel({
+        presets: ['es2015']
+      }))
+      .pipe(uglify())
+      .pipe(gulp.dest('builds/uw-oshkosh-divi/js'));
+});
+
+gulp.task('images', function(){
+  return gulp.src('src/uw-oshkosh-divi/img/**/*')
+      .pipe(imagemin())
+      .pipe(gulp.dest('builds/uw-oshkosh-divi/img'));
+});
+
+gulp.task('php', function(){
+  return gulp.src('src/uw-oshkosh-divi/**/*.php')
+      .pipe(gulp.dest('builds/uw-oshkosh-divi/'));
+});
+
+gulp.task('lint', function(){
+  return gulp.src('src/uw-oshkosh-divi/js/*.js')
+      .pipe(jshint())
+      .pipe(jshint.reporter('default'));
 });
