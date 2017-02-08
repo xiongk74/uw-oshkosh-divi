@@ -31,7 +31,7 @@
       function menu_Overlap(){
         var menus = $(".et_mobile_menu").find('*');
         for (let item of menus){
-          if(item.firstElementChild==null){
+          if(item.firstElementChild===null){
             $(item).addClass("mobile-menu-text");
           }
         }

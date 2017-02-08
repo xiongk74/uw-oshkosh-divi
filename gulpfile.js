@@ -18,9 +18,10 @@ const runSequence = require('run-sequence');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const gulpif = require('gulp-if');
+const scsslint = require('gulp-scss-lint');
 
 gulp.task('build', function(cb) {
-  runSequence('clean', ['style', 'js', 'images', 'php'], 'lint', cb);
+  runSequence('clean', ['style', 'js', 'images', 'php'], ['js-lint', 'scss-lint'], cb);
 });
 
 gulp.task('clean', function() {
@@ -67,8 +68,15 @@ gulp.task('php', function(){
       .pipe(gulp.dest('builds/uw-oshkosh-divi/'));
 });
 
-gulp.task('lint', function(){
+gulp.task('js-lint', function(){
   return gulp.src('src/uw-oshkosh-divi/js/*.js')
-      .pipe(jshint())
+      .pipe(jshint({
+        'esversion': 6
+      }))
       .pipe(jshint.reporter('default'));
+});
+
+gulp.task('scss-lint', function() {
+  return gulp.src('src/uw-oshkosh-divi/*.scss')
+    .pipe(scsslint());
 });
