@@ -1,5 +1,5 @@
 // Include gulp
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 // Include Our Plugins
 const jshint = require('gulp-jshint');
@@ -19,6 +19,30 @@ const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const gulpif = require('gulp-if');
 const scsslint = require('gulp-scss-lint');
+const browserSync = require('browser-sync').create();
+const watch = require('gulp-watch');
+
+// Including the path to local WP development
+var localWP = require('./path-to-local-wp.js');
+
+gulp.task('bs-reload', function (){
+    browserSync.reload();
+});
+
+gulp.task('pipe-files', function(){
+  return gulp.src('builds/**/*.*')
+          .pipe(gulp.dest(localWP.path));
+});
+
+gulp.task('serve', function(){
+  browserSync.init({
+      proxy: "localhost:8888/uwo-wp-dev/"
+  });
+
+  return watch('src/uw-oshkosh-divi/**/*.*', function(){
+    runSequence('build', 'pipe-files', 'bs-reload');
+  });
+});
 
 gulp.task('build', function(cb) {
   runSequence('clean', ['style', 'js', 'images', 'php'], ['js-lint', 'scss-lint'], cb);
