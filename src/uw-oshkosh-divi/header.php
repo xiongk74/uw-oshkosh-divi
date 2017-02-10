@@ -179,7 +179,7 @@
 					<a href="http://www.uwosh.edu">
 						<img src="<?php echo esc_attr( $logo ); ?>" alt="University of Wisconsin Oshkosh wordmark" id="logo" />
 					</a>
-					<div id="siteTitle">
+					<div class="site-title">
 						<h1>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>
