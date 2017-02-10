@@ -5,7 +5,7 @@
   $(document).ready(function(){
     // Custom search box
     $("#et_search_icon").click(function(){
-      $("#et_top_search div div form").fadeToggle("slow");
+      $("form.gsc-search-box").fadeToggle("slow");
     });
   });
 
@@ -24,18 +24,17 @@
         var lastClass = splitClassName.pop();
         $("." + lastClass ).children().children().find("*").css('background-color', $("."+lastClass).css('background-color'));
       }
-      }
-
-      menu_background();
-      //stops the mobile menu items from overlapping
-      function menu_Overlap(){
-        var menus = $(".et_mobile_menu").find('*');
-        for (let item of menus){
-          if(item.firstElementChild===null){
-            $(item).addClass("mobile-menu-text");
-          }
+    }
+    menu_background();
+    //stops the mobile menu items from overlapping
+    function menu_Overlap(){
+      var menus = $(".et_mobile_menu").find('*');
+      for (let item of menus){
+        if(item.firstElementChild===null){
+          $(item).addClass("mobile-menu-text");
         }
       }
-      menu_Overlap();
-    });
+    }
+    menu_Overlap();
+  });
 }(jQuery));

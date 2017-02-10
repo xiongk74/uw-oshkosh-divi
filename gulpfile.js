@@ -23,7 +23,14 @@ const browserSync = require('browser-sync').create();
 const watch = require('gulp-watch');
 
 // Including the path to local WP development
-var localWP = require('./path-to-local-wp.js');
+var localWPConfig = require('./config/local-wp-config.js');
+
+// Tasks for local WordPress development
+gulp.task('bs-init', function(){
+  browserSync.init({
+      proxy: localWPConfig.proxy
+  });
+});
 
 gulp.task('bs-reload', function (){
     browserSync.reload();
@@ -31,29 +38,28 @@ gulp.task('bs-reload', function (){
 
 gulp.task('pipe-files', function(){
   return gulp.src('builds/**/*.*')
-          .pipe(gulp.dest(localWP.path));
+          .pipe(gulp.dest(localWPConfig.filePath));
 });
 
 gulp.task('serve', function(){
-  browserSync.init({
-      proxy: "localhost:8888/uwo-wp-dev/"
-  });
+  // Building and piping the files before browserSync init
+  runSequence('build', 'pipe-files', 'bs-init');
 
+  // Watching all files in the src
   return watch('src/uw-oshkosh-divi/**/*.*', function(){
     runSequence('build', 'pipe-files', 'bs-reload');
   });
 });
 
-gulp.task('build', function(cb) {
-  runSequence('clean', ['style', 'js', 'images', 'php'], ['js-lint', 'scss-lint'], cb);
-});
-
+// Tasks for WordPress theme build
 gulp.task('clean', function() {
     return gulp.src('builds')
         .pipe(clean());
 });
 
+// Building the CSS
 gulp.task('style', function () {
+  // Function to check if file contains WordPress theme metadata
   var notThemeMetadata = function(file){
     var filenameSplit = String(file["history"]).split('/');
     var filename = filenameSplit[filenameSplit.length-1];
@@ -62,7 +68,8 @@ gulp.task('style', function () {
     }
     return false;
   }
-  return gulp.src(['src/**/*.css', 'src/**/*.scss'])
+
+  return gulp.src(['src/uw-oshkosh-divi/theme-metadata.css', 'src/uw-oshkosh-divi/style/*.scss'])
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions']
@@ -101,6 +108,10 @@ gulp.task('js-lint', function(){
 });
 
 gulp.task('scss-lint', function() {
-  return gulp.src('src/uw-oshkosh-divi/*.scss')
-    .pipe(scsslint());
+  return gulp.src('src/uw-oshkosh-divi/style/*.scss')
+    .pipe(scsslint({'config': 'config/scss-lint-config.yml'}));
+});
+
+gulp.task('build', function(cb) {
+  runSequence('clean', ['style', 'js', 'images', 'php'], ['js-lint', 'scss-lint'], cb);
 });
