@@ -2,11 +2,19 @@
 
 ## Prerequisites
 
-### [Node.js](https://nodejs.org)
+### 1. [Node.js](https://nodejs.org)
 
 Bring up a terminal and type `node --version`.
 Node should respond with a version at or above 0.10.x.
 If you require Node, go to [nodejs.org](https://nodejs.org) and click on the big green Install button.
+
+### 2. [Gulp](http://gulpjs.com)
+
+After installing Node, bring up a terminal and type `npm install gulp-cli -g`
+
+### 3. [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+
+Select your operating system from the list and install Ruby making sure to add Ruby to your system path.
 
 ### Install local dependencies
 1. Navigate to the repository in a terminal window
