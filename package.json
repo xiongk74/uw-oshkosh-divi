@@ -55,6 +55,7 @@
     "imagemin-cli": "^3.0.0",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-svgo": "^5.2.0",
+    "jshint": "^2.9.4",
     "merge-stream": "^1.0.1",
     "run-sequence": "^1.2.2"
   },
