@@ -21,8 +21,6 @@ Select your operating system from the list and install Ruby making sure to add R
 2. Run ```npm install```
 3. The Sass linter requires Ruby and <a href='https://github.com/causes/scss-lint' target='_blank'>scss-lint</a>. Run ```gem install scss_lint```
 
-It should be noted that this package runs some UNIX commands, so this won't work on Windows. It does work on Linux and Mac.
-
 That's it! You should have everything you need to run scripts for uw-oshkosh-divi.
 
 # Commands
