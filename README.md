@@ -53,11 +53,15 @@ In a separate bash window, there are two main Gulp commands you may run.
 You may log into phpMyAdmin via your web browser at `http://localhost:22222`.
 
 Default login credentials are:
+
 Username: `root`
+
 Password: `root`
 
 ## Logging into WordPress
 
 Default login credentials are:
+
 Username: `root`
+
 Password: `root`
