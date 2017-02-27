@@ -42,6 +42,22 @@ Finally, start the UWO WordPress Bundle with `docker-compose up`.
 
 In a separate bash window, there are two main Gulp commands you may run.
 
+## Using Gulp
+
 1. `gulp` - builds the project
 
 2. `gulp serve` - builds the project, opens the site in your web browser, and starts a watch on your `src` folder.
+
+## Using phpMyAdmin
+
+You may log into phpMyAdmin via your web browser at `http://localhost:22222`.
+
+Default login credentials are:
+Username: `root`
+Password: `root`
+
+## Logging into WordPress
+
+Default login credentials are:
+Username: `root`
+Password: `root`
