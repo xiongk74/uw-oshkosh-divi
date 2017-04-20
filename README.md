@@ -1,7 +1,7 @@
 ### Prerequisites
 
 ## [Docker](https://docs.docker.com/engine/installation/)
-Make sure you've installed this application and it's running on your machine.
+Make sure you've installed this application and it's running on your machine. Waaaazzzzzuuup
 
 ## [Node.js](https://nodejs.org)
 
